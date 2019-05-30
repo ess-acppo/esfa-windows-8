@@ -1,0 +1,204 @@
+﻿<form role="form" id="form3">
+    <div class="row col-md-12 col-sm-12 col-xs-12">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li class="active ripple">
+                    <a href="#tab_AS" data-toggle="tab"><i class="fa fa-tablet mxr-5"></i>Application</a>
+                </li>
+                <li class="ripple">
+                    <a href="#tab_DS" data-toggle="tab"><i class="fa fa-cog mxr-5"></i>Device</a>
+                </li>
+                <li class="ripple">
+                    <a href="#tab_MS" data-toggle="tab"><i class="fa fa-map mxr-5"></i>Maps</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_AS">
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm hide">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Application Mode</h5>
+                            <small>Select application mode: PH, AH</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <select class="form-control pull-right" id="appMode">
+                                <option value=PH>Plant Health (PH)</option>
+                                <option value=AH>Animal Health (PH)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Device Owner - Team</h5>
+                            <small>Select your Team: BPH/ IPH/ NPH/ NAF</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <select class="form-control pull-right" id="doTeam"></select>
+                        </div>
+                    </div>
+                    <!--<div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Device Owner</h5>
+                            <small>Select this device's Owner. All observations will be submitted as the device owner.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <select class="form-control pull-right" id="curUserId"></select>
+                        </div>
+                    </div>-->
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm SampleCurrNumber">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Sample Prefix</h5>
+                            <small>Set the 2-letter prefix for your samples. By default, this value is set to 'XX'.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <input type="text" class="form-control pull-right" name="samplePrefix" value="XX" />
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm SampleCurrNumber">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Sample Current Number</h5>
+                            <small>Set the current number for your samples sequence number. By default, this value shows the current sample sequence number.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <input type="text" class="form-control pull-right" name="sampleCurrNum" value="0" />
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm AnimalCurrNumber">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Animal Current Number</h5>
+                            <small>Set the current number for animal sequence number. By default, this value shows the current sequence number.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <input type="text" class="form-control pull-right" name="AnimalCurrNum" value="0" />
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Application Data Sync</h5>
+                            <small>Sync application cache with the Server.</small>
+                            <i class="fa fa-info-circle fa-2x text-info hide" id="showPayloads" style="cursor:pointer"></i>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="btn btn-md btn-sm btn-default ripple btnSync"><i class="fa fa-refresh"></i>&nbsp;Data Sync</a>&nbsp;
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Application Logs</h5>
+                            <small>Download or clear application logs.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="btn btn-md btn-sm btn-default ripple btnDownloadLogs"><i class="fa fa-download"></i>&nbsp;Download</a>&nbsp;
+                            <a href="#" class="btn btn-md btn-sm btn-default ripple btnClearLogs"><i class="fa fa-trash"></i>&nbsp;Clear</a>&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_DS">
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Data Backup</h5>
+                            <small>Backup your observations to a local folder.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="btn btn-md btn-sm btn-default ripple btnBackupData"><i class="fa fa-database"></i>&nbsp;Data Backup</a>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Data Restore</h5>
+                            <small>Restore your observations from the last backup.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="btn btn-md btn-sm btn-default ripple btnRestoreData"><i class="fa fa-rotate-left"></i>&nbsp;Data Restore</a>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Data Reset</h5>
+                            <small>Clear all observations.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="btn btn-md btn-sm btn-danger btnResetData"><i class="fa fa-power-off"></i>&nbsp;Data Reset</a>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Debug Mode</h5>
+                            <small>Switch on debug mode to watch the outgoing payloads.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <input type="checkbox" class="minimal" name="debugMode" value="" id="debugMode">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_MS">
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Start Zoom</h5>
+                            <small>Set the start zoom for the maps.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <select class="form-control" name="startZoom">
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10</option>
+                                <option value=11>11</option>
+                                <option value=12>12</option>
+                                <option value=13>13</option>
+                                <option value=14>14</option>
+                                <option value=15>15</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>End Zoom</h5>
+                            <small>Set the end zoom for the maps.</small>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <select class="form-control" name="endZoom">
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10</option>
+                                <option value=11>11</option>
+                                <option value=12>12</option>
+                                <option value=13>13</option>
+                                <option value=14>14</option>
+                                <option value=15>15</option>
+                                <option value=16>16</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 border-bottom obsForm">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Base Maps</h5>
+                            Last downloaded on:&nbsp;<label class="mapBNotes text-sm">09/09/1900</label>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="btn btn-sm btn-default ripple downloadBaseMaps" data-files="13"><i class="fa fa-download"></i>&nbsp;Download</a><br /><br />
+                        </div>
+                    </div>
+                    <div class="row col-md-12 col-sm-12 col-xs-12 obsForm activityMaps">
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <h5>Current Activity Maps</h5>
+                            <select class="form-control" id="curActivities"></select><br />
+                            Last downloaded on:&nbsp;<label class="mapNotes text-sm">09/09/1900</label>
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                            <a href="#" class="btn btn-sm btn-default ripple downloadMaps"><i class="fa fa-download"></i>&nbsp;Download</a><br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" id="pageScript">
+    $('#mt5').text('Application Settings');
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue'
+    });
+</script>
